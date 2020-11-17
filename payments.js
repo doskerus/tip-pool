@@ -1,5 +1,7 @@
 let billAmtInput = document.getElementById('billAmt');
 let tipAmtInput = document.getElementById('tipAmt');
+let paymentTbody = document.querySelector('#paymentTable tbody');
+let summaryTds = document.querySelectorAll('#summaryTable tbody tr td');
 let allPayments = {};
 let paymentId = 0;
 
@@ -49,14 +51,11 @@ function appendPaymentTable(curPayment) {
 	appendTd(newTr, curPayment.tipPercent + '%');
 	appendDeleteBtn(newTr);
 
-	let paymentTbody = document.querySelector('#paymentTable tbody');
 	paymentTbody.append(newTr);
 }
 
 // create table row element and pass to appendTd with calculated sum of all payment
 function updateSummary() {
-	let summaryTds = document.querySelectorAll('#summaryTable tbody tr td');
-
 	if (sumPaymentTotal('billAmt') !== 0) {
 		let tipPercentAvg = sumPaymentTotal('tipAmt') * 100 / sumPaymentTotal('billAmt');
 
