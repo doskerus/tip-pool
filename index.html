@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tip Pool 💰💲💵</title>
+	<link rel="icon" type="image/png" href="dollar.png">
+
+	<!-- include CSS for Jasmine -->
+	<link rel="stylesheet" href="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.css">
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<h1>Tip Pool 💰💲💵</h1>
+
+	<section id="input">
+		<aside>
+			<h3>Input payment info</h3>
+			<form id="paymentForm">
+				<label for="billAmt">Bill Amount</label>
+				<input type="number" id="billAmt" required autofocus />
+
+				<label for="tipAmt">Tip Amount</label>
+				<input type="number" id="tipAmt" required />
+
+				<button>Submit</button>
+			</form>
+
+			<table id="paymentTable">
+				<thead>
+					<tr>
+						<th>Bill Amount</th>
+						<th>Tip Amount</th>
+						<th>Tip Percent</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</aside>
+		<aside>
+			<h3>Input server info</h3>
+			<form id="serverForm">
+				<label for="serverName">Server Name</label>
+				<input id="serverName" required />
+
+				<button>Submit</button>
+			</form>
+
+			<table id="serverTable">
+				<thead>
+					<tr>
+						<th>Server Name</th>
+						<th>Earnings</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</aside>
+	</section>
+
+	<section id="summary">
+		<h2>Shift summary</h2>
+		<table id="summaryTable">
+			<thead>
+				<tr>
+					<th>Bill Total</th>
+					<th>Tip Total</th>
+					<th>Tip Percent Average</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<!-- uncoment the following to run Jasmine tests -->
+	<script src="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+	<script src="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+	<script src="https://unpkg.com/jasmine-core/lib/jasmine-core/boot.js"></script>
+	<script src="test/payments.test.js"></script>
+	<script src="test/servers.test.js"></script>
+	<script src="test/helpers.test.js"></script>
+	<!-- end of Jasmine tests -->
+	<script src="payments.js"></script>
+	<script src="servers.js"></script>
+	<script src="helpers.js"></script>
+</body>
+
+</html>
